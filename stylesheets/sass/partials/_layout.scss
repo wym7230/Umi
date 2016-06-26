@@ -1,0 +1,23 @@
+.filter {
+	height: auto;
+	width: 100%;
+	text-align: center;
+	border-left: 1px solid $table-color;
+	border-right: 1px solid $table-color;
+	overflow: hidden;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.filter-row {
+	width: 100%;
+	padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $table-color;
+}
+
+.page-search {
+  	margin-top: 25px;
+  	margin-bottom: 25px;
+  	padding: 10px;
+}

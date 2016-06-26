@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="umi">
+	<head>
+		<meta charset="utf-8">
+		<title>Umi</title>
+
+		
+		<!-- Mobile viewport optimized -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- Bootstrap CSS -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/vendor/bootstrap-glyphicons.css" rel="stylesheet">
+		<!-- Vendor CSS-->
+
+		<!-- Custom CSS -->
+		<link href="css/main.css" rel="stylesheet">
+		
+		
+	</head>
+
+	<body>
+	    <div class="wrapper ng-cloak">
+	    	<div ng-include="'views/navBar.html'"></div>
+			<div ng-view autoscroll=true></div>
+			<footer ng-include="'views/footer.html'"></footer>
+		</div>
+		
+
+		<!--  Vendors-->
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		<script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="//code.angularjs.org/1.4.7/angular-cookies.min.js"></script>
+		<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+
+		<!-- Modules -->
+		<%= javascript_include_tag 'app' %>
+
+		<!-- Controllers -->
+		<%= javascript_include_tag 'controllers/HomeController' %>
+		<%= javascript_include_tag 'controllers/ItemsController' %>
+		<%= javascript_include_tag 'controllers/LoginController' %>
+		<%= javascript_include_tag 'controllers/NavBarController' %>
+		<%= javascript_include_tag 'controllers/SignupController' %>
+		<%= javascript_include_tag 'controllers/NewPartnerController' %>
+		<%= javascript_include_tag 'controllers/SearchBoxController' %>
+		<%= javascript_include_tag 'controllers/ModalInstanceController' %>
+		<%= javascript_include_tag 'controllers/GlobalCartController' %>
+		<!-- Directives -->
+		<%= javascript_include_tag 'directives/umDetailModal' %>
+		<%= javascript_include_tag 'directives/umSearchBox' %>
+		<%= javascript_include_tag 'directives/umGlobalCart' %>
+		<!-- Services -->
+		<%= javascript_include_tag 'services/ItemService' %>
+		<%= javascript_include_tag 'services/AuthenticationService' %>
+		<%= javascript_include_tag 'services/userService' %>
+		<%= javascript_include_tag 'services/flashService' %>
+	</body>
+</html>

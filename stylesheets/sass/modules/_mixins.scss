@@ -1,0 +1,23 @@
+@mixin trans($val...) {
+	-webkit-transition: $val;
+	-moz-transition: $val; 
+	-o-transition: $val; 
+	transition: $val; 
+}
+
+@mixin button-theme($btn-color) {
+	background-color: $btn-color;
+	text-transform: uppercase;
+	&:hover {
+		text-decoration: none;
+		background-color: darken($btn-color, 6%);
+		box-shadow: 0 .125em $off-wht, inset 0 .063em $off-wht, inset 0 -.188em lighten($btn-color, 2%);
+	}
+	&:active {
+		@include box-emboss(0.4,0.6); 
+	}
+}
+
+@mixin panel-theme($panle-color) {
+
+}

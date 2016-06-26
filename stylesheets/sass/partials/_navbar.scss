@@ -1,0 +1,32 @@
+.navbar-transparent {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.navbar-transparent .navbar-toggle {
+    border-color: #ddd
+}
+.navbar-transparent .navbar-toggle:focus,
+.navbar-transparent .navbar-toggle:hover {
+    background-color: #ddd
+}
+.navbar-transparent .navbar-toggle .icon-bar {
+    background-color: #888
+}
+
+
+.navbar-white {
+	background-color: $white;
+	a {
+		color: black;
+	}
+}
+.navbar-white .navbar-toggle {
+    border-color: #ddd
+}
+.navbar-white .navbar-toggle:focus,
+.navbar-white .navbar-toggle:hover {
+    background-color: #ddd
+}
+.navbar-white .navbar-toggle .icon-bar {
+    background-color: #888
+}

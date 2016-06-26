@@ -1,0 +1,55 @@
+<html>
+<body>
+<div class="wrapper">
+<link href="../stylesheets/css/main.css" rel="stylesheet">
+<link href="../stylesheets/css/vendor/bootstrap.min.css" rel="stylesheet">
+<link href="../stylesheets/css/vendor/bootstrap-glyphicons.css" rel="stylesheet">
+<!--*******************DELETE************************-->
+
+<nav class="navbar navbar-transparent navbar-fixed-top" ng-controller="NavBarController as navBarCtrl" ng-class="">
+  <div class="container">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#/" id="logo">Umi</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+          <div class="pull-right">
+              <div class="cell pull-right">
+                  <a href="javascript:void(0);" ng-click="navBarCtrl.toggleGlobalCart()" class="button-navbar"><span class="glyphicon glyphicon-shopping-cart" sytle="font-size:15pt"></span></a>
+              </div>
+
+              <div class="dropdown cell pull-right" ng-if="globals.currentUser">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#/dashboard">Hi, {{globals.currentUser.email}} <span class="caret"></span></a>
+                  <div class="dropdown-menu">
+                    <div><a href="javascript:void(0);">Your Order</a></div>
+                    <div><a href="javascript:void(0);">Edit Profile</a></div>
+                    <div><a href="javascript:void(0);" ng-click="navBarCtrl.logout()">Log Out</a></div>
+                  </div>
+              </div>
+
+              <div class="cell pull-right" ng-if="!globals.currentUser">
+                  <a href="javascript:void(0);" ng-click="navBarCtrl.openModel('login')" class="button-navbar">Log in</a>
+              </div>
+
+              <div class="cell pull-right" ng-if="!globals.currentUser">
+                  <a href="javascript:void(0);" ng-click="navBarCtrl.openModel('signup')" class="button-navbar"><span>Sign up</span></a>
+              </div>
+
+              <div class="cell pull-right">
+                  <a href="#/foods/new" class="button button-transparent"><span>Share Your Cuisine</span></a>
+              </div>
+          </div>
+      </div>
+  </div>
+    <um-global-cart class="sidebar-wrapper" ng-class="{toggled: globalCartOpened}">
+    </um-global-cart>
+</nav>
+<!--*******************DELETE************************-->
+</div>
+</body>
+</html>

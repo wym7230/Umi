@@ -1,0 +1,30 @@
+
+.sidebar-wrapper {
+    z-index: 1000;
+    width: 300px;
+    position: fixed;
+    height: 100%;
+    top : 50px;
+    right : -300px;
+    background: $lighter-grey;
+    overflow:hidden;
+    border-left:1px solid #e5e5e5;
+    @include trans(all 0.5s ease);
+
+}
+
+.checkout {
+	position: absolute;
+	left: 50%;
+	width: 100%;
+	bottom: 50px;
+}
+
+.sidebar-wrapper.toggled {
+    right : 0;
+}
+
+
+
+
+

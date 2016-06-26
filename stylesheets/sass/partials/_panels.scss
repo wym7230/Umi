@@ -1,0 +1,24 @@
+.panels {
+	height: auto;
+    margin-bottom: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    border: 1px solid #dce0e0;
+    background-color: #fff;
+    @include border-radius(2px);
+    overflow: hidden;
+}
+
+// .item-list-content{
+// 	@extend %panles;
+// 	border: none;
+// 	background-color: $font-color-white;
+// }
+
+.panels-list-item {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	margin-left: 1px;
+	cursor: pointer !important;
+}

@@ -1,0 +1,18 @@
+
+<div class="sidebar-nav">
+    <div class="sidebar-list" ng-repeat="item in globals.cart track by $index" ng-if="item">
+        <button type="button" class="close" ng-click="globalCartCtrl.remove(item)" aria-hidden="true">&times;</button>
+        <p>{{item.name}}</p>
+        <p class="pull-right">{{item.number}}</p>
+        <p>{{item.price}}</p>
+    </div>
+
+    <div class="checkout" ng-show="globals.cart">
+        <form role="form"ng-submit="globalCartCtrl.checkOut()" id="checkout">
+            <button type="submit">Check Out </button>
+        </form>
+    </div>
+
+
+</div>
+

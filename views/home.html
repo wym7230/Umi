@@ -1,0 +1,100 @@
+
+<div class="home-wrapper">
+		<!-- Top Image -->
+		<div class="home-top-image">	        
+			<div class="text-centered">
+		      <h2 class="text-jumbo text-uppercase text-color-white">taste home again</h2>
+		      <h4 class="text-color-white">
+		      	Taste the most Decent Cuisine from all over the world in your home.
+		      </h4>
+		    </div>
+		</div>
+		<!-- END Top Image -->
+		<!-- Filter -->
+		<div class="container">
+			<div class="filter">
+
+				<div class="filter-row">
+					<div class="row">
+						<div class="col-md-3 col-sm-3 text-right line-height-3">
+							<span>Cuisine: </span>
+						</div>
+						<div class="col-md-6 col-sm-6 text-left line-height-3">
+							<a ng-repeat="category in homeCtrl.categoryList" ng-click="homeCtrl.setCategory(category)" class="btn btn-rate" ng-class="{'btn-selected': homeCtrl.selectedTabKey == category.cuisine}">
+							<span>{{category.cuisine}}</span></a>
+						</div>
+						<div class="col-md-3 col-sm-3">
+							<um-search-box class="pull-right"></um-search-box>
+						</div>
+					</div>
+				</div>
+				<div class="filter-row">
+					<div class="row">
+						<div class="col-md-3 col-sm-3 text-right line-height-3">
+							<span>Sort by: </span>
+						</div>
+						<div class="col-md-9 col-sm-9 text-left space-padding-top">
+							<div class="row">
+								<div class="col-md-5 col-sm-5">
+									<input class="tgl tgl-skewed" id="relevance" ng-model='homeCtrl.sorting.value' value="spicy" ng-change="homeCtrl.setSorting(homeCtrl.sorting.value)" type='radio'>
+									<label class='tgl-btn' data-tg-select='Relevance' for='relevance'></label>
+									<input class='tgl tgl-skewed' id='reviews' ng-model='homeCtrl.sorting.value' value='rate' ng-click="homeCtrl.setSorting(homeCtrl.sorting.value)" type='radio'>
+									<label class='tgl-btn' data-tg-select='Reviews' for='reviews'></label>
+									<input class='tgl tgl-skewed' id='price' ng-model='homeCtrl.sorting.value' value='price' ng-click="homeCtrl.setSorting(homeCtrl.sorting.value)" type='radio'>
+									<label class='tgl-btn' data-tg-select='Price' for='price'></label>
+								</div>
+								<div class="col-md-7 col-sm-7">
+										<div>
+										   <input class='tgl tgl-skewed' id='pickup-switch' type='radio' ng-model='homeCtrl.deliver' ng-value='0' ng-change="homeCtrl.fetch()">
+										   <label class='tgl-btn' data-tg-select='Pick Up' for='pickup-switch'></label>
+										   <input class='tgl tgl-skewed' id='delivery-switch' type='radio' ng-model='homeCtrl.deliver' ng-value='1' ng-change="homeCtrl.fetch()">
+										   <label class='tgl-btn' data-tg-select='Delivery' for='delivery-switch'></label>
+										</div>
+										<div class="display-ib space-margin-left">
+										   <input class='tgl tgl-skewed' id='avaliable-switch' type='radio' ng-model='homeCtrl.reserve' ng-value='0' ng-change="homeCtrl.fetch()">
+										   <label class='tgl-btn space-margin-left' data-tg-select='Avaliable' for='avaliable-switch'></label>
+										   <input class='tgl tgl-skewed' id='preorder-switch' type='radio' ng-model='homeCtrl.reserve' ng-value='1' ng-change="homeCtrl.fetch()">
+										   <label class='tgl-btn' style="margin-left:0" data-tg-select='Pre-order' for='preorder-switch'></label>
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END filter-->
+			<div class="page-search">
+
+				<!-- item list -->
+				<div class="search-result" ng-controller="ItemsController as itemsCtrl">
+					<div ng-if="homeCtrl.loaded == false">
+			        	Loading results...
+			      	</div>
+
+					<div ng-if="homeCtrl.loaded == true" class="row">
+						<!-- single item -->
+						<section class="col-xs-12 col-sm-6 col-md-4" ng-repeat="item in homeCtrl.items" ng-click="itemsCtrl.openModal(item)" id="item">
+							<div class="panels panels-list-item">
+							  
+							      <img ng-src="{{item.images[0]}}" src="../images/food.jpg" />
+							      <div class="circle-transparents price">{{item.price}}</div>
+							      <div class="caption">
+							        <h3 class="pull-right">{{item.name}}</h3>
+							        <div>
+							        	<p>Rate: {{item.rate}}</p>
+							        	<p>Cuisine: {{item.cuisine}}</p>
+									</div>
+							      </div><!-- /description -->
+							   
+						    </div>
+						</section><!-- END singleitem -->
+
+					</div>
+
+					<div ng-if="homeCtrl.noItem == true">
+			        	Sorry, We temporarily don't have items what you want around your location. <a href class="btn">List this item!</a>
+			     	</div>
+				</div><!-- END item list -->
+			</div>
+		</div>
+</div>

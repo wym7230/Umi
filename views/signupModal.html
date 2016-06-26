@@ -1,0 +1,37 @@
+<div class="modal-body">
+    <div ng-show="signupCtrl.error" class="alert alert-danger">
+        {{signupCtrl.error}}
+    </div>
+    <form name="signinForm" role="form" ng-submit="signupCtrl.signup()" class="ng-pristine ng-invalid ng-invalid-required" id="signinForm">
+      <div class="form-group" ng-class="{ 'has-error': form.firstname.$dirty && form.firstname.$error.required }">
+        <label>First Name</label>
+        <input type="text" name="firstname" id="firstname" class="form-control" ng-model="signupCtrl.user.first_name" required />
+        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Your firstname is required</span>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-error': form.lastname.$dirty && form.lastname.$error.required }">
+        <label>Last Name</label>
+        <input type="text" name="lastname" id="lastname" class="form-control" ng-model="signupCtrl.user.last_name" required />
+        <span ng-show="form.lastname.$dirty && form.lastname.$error.required" class="help-block">Your lastname is required</span>
+      </div>
+
+
+      <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+        <label>E-mail</label>
+        <input type="text" name="email" id="email" class="form-control" ng-model="signupCtrl.user.email" required />
+        <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">E-mail is required</span>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+        <label>Password</label>
+        <input type="password" name="password" id="password" class="form-control" ng-model="signupCtrl.user.password" required />
+        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+      </div>
+      <div class="user-agreement"></div><button type="submit">Sign up</button>
+    </form>
+</div>
+<hr class="login-modal-divider" />
+<div class="modal-center">
+    <div class="text-muted">
+        Already have an account&#65311;<a href="" ng-click="signupCtrl.switchToLogin()">Log in now!</a>
+    </div>
+</div>

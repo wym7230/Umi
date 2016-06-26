@@ -1,0 +1,36 @@
+<div class="input-group search-bar">
+	<input type="text" ng-model="searchText" ng-change="change()" onclick="select()" class="form-control" placeholder="Search food &amp; store name" autofocus />
+	<span class="input-group-addon bar-style"><i class="glyphicon glyphicon-search"></i></span>
+
+	<div class="search-box" style="display:block">
+        <div ng-if="searchItems.length != 0" class="searchbox-list" ng-class="{'list-separator': true}">
+            <ul>
+                <li ng-repeat="item in searchItems | limitTo: 5" limit>
+                    <a href=""><span ng-class="search-list-name">{{item.name}}</span></a>
+                </li>
+            </ul>
+        </div>
+
+		<div ng-if="searchShops.length != 0" class="searchbox-list">
+			<ul>
+				<li ng-repeat="shop in searchShops">
+					<a href=""><span class="search-list-name">{{shop.name}}</span></a>
+				</li>
+			</ul>
+		</div>
+
+		<div ng-if="">
+			
+		</div>
+	</div>
+</div><!-- END search bar -->
+
+<style type="text/css">
+.search-box{
+	position: absolute;
+    width: 360px;
+    color: #999;
+    border: 1px solid #ededed;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
+</style>

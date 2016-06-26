@@ -1,0 +1,25 @@
+.text-jumbo {
+	font-size: 60px;
+    font-weight: 700;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.text-color-white {
+	color: $white;
+}
+
+.text-centered {
+	@include vert-centerer;
+ 	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
+}
